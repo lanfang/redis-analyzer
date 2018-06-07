@@ -94,7 +94,8 @@ Global Flags:
 #### 解析rdb文件
 通过指定rdb文件或者redis服务器，来分析各种key，具体查看帮助信息
 ```
-cat parse_rdb_result_127.0.0.1:6379
+$ redis-analyzer parse-rdb --node "127.0.0.1:6379,127.0.0.1:6479,127.0.0.1:6579"  --on-master --pretty --top-num 1 --output ./parse_rdb_result --log-file ./logxxx
+$ cat parse_rdb_result_127.0.0.1:6379
 +-----------------+----------------------------+--------+--------+--------------+-----------------+
 | DATABASE(KEYS)  |          TOP KEY           |  TYPE  | EXIPRY | ELEMENTCOUNT | TOTALSIZE(BYTE) |
 +-----------------+----------------------------+--------+--------+--------------+-----------------+
